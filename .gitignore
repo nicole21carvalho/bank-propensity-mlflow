@@ -1,0 +1,14 @@
+# Ambiente e caches
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Base baixada da UCI e o SQLite gerado dela (o download confere o SHA-256; ver dados/README.md)
+dados/*.zip
+dados/*.sqlite
+
+# Experimentos locais do MLflow (o CI gera os seus e publica como artefato)
+mlflow.db
+mlartifacts/
+mlruns/

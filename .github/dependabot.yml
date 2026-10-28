@@ -1,0 +1,17 @@
+# PR semanal quando sai versao nova. Sem isto, as actions fixadas por SHA e as dependencias travadas no uv.lock
+# envelheceriam em silencio.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      # Pilha de dados: sobem juntas, separadas um PR quebraria o outro.
+      dados:
+        patterns: ["numpy", "pandas", "scikit-learn", "matplotlib"]

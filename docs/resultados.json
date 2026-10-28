@@ -1,0 +1,71 @@
+{
+  "contexto": {
+    "clientes_treino": 32950,
+    "clientes_teste": 8238,
+    "taxa_treino": 0.0637,
+    "taxa_teste": 0.3083
+  },
+  "escolhido": "regressao_logistica",
+  "modelos": {
+    "regra_de_segmento": {
+      "descricao": "Taxa histórica do segmento (sem ML)",
+      "pr_auc_validacao": 0.0696,
+      "roc_auc": 0.366,
+      "pr_auc": 0.295,
+      "brier": 0.2628,
+      "captura_top10": 0.0717,
+      "captura_top20": 0.1043,
+      "lift_top10": 0.7165
+    },
+    "regressao_logistica": {
+      "descricao": "Regressão logística com variáveis padronizadas",
+      "pr_auc_validacao": 0.0849,
+      "roc_auc": 0.7479,
+      "pr_auc": 0.5284,
+      "brier": 0.1909,
+      "captura_top10": 0.1862,
+      "captura_top20": 0.3843,
+      "lift_top10": 1.8622
+    },
+    "random_forest": {
+      "descricao": "Floresta aleatória",
+      "pr_auc_validacao": 0.0848,
+      "roc_auc": 0.7464,
+      "pr_auc": 0.5423,
+      "brier": 0.2097,
+      "captura_top10": 0.2024,
+      "captura_top20": 0.3843,
+      "lift_top10": 2.0236
+    },
+    "gradient_boosting": {
+      "descricao": "Gradient boosting por histogramas",
+      "pr_auc_validacao": 0.0792,
+      "roc_auc": 0.6332,
+      "pr_auc": 0.4263,
+      "brier": 0.2508,
+      "captura_top10": 0.1531,
+      "captura_top20": 0.3429,
+      "lift_top10": 1.5315
+    }
+  },
+  "divisao_aleatoria": {
+    "roc_auc": 0.8009,
+    "pr_auc": 0.4655,
+    "brier": 0.0768,
+    "captura_top10": 0.4526,
+    "captura_top20": 0.6487,
+    "lift_top10": 4.5259
+  },
+  "importancia": {
+    "contatado_antes": 0.1273,
+    "month": 0.0431,
+    "nr_employed": 0.0318,
+    "cons_price_idx": 0.0219,
+    "emp_var_rate": 0.0188,
+    "cons_conf_idx": 0.0083,
+    "poutcome": 0.0057,
+    "contact": 0.0046,
+    "job": 0.0038,
+    "day_of_week": 0.0028
+  }
+}

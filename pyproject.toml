@@ -1,0 +1,47 @@
+[project]
+name = "mira"
+version = "0.1.0"
+description = "Propensão de contratação de um produto bancário com SQL, scikit-learn e MLflow"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10",
+    "mlflow>=3.4",
+    "numpy>=2.3",
+    "pandas>=2.3",
+    "scikit-learn>=1.7",
+]
+
+[project.scripts]
+mira-treinar = "mira.treino:main"
+mira-explorar = "mira.exploracao:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4",
+    "ruff>=0.13",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mira"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py314"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "S", "PT", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # acentos e "·" nos textos em português
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
